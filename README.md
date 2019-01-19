@@ -10,7 +10,6 @@ git clone https://github.com/Geek-Pwn/ORtester.git
 
 ## Dependencies
 ORtester use requests python module.
-* Installation on Linux:
 ```
 sudo pip install -r requirements.txt
 ```
