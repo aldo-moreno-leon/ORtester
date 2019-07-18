@@ -6,7 +6,7 @@ ORtester is a tool designed to detect open redirects vulnerabilities on websites
 ![Alt text](https://github.com/Geek-Pwn/ORtester/blob/master/banner.PNG?raw=true)
 
 ## Installation
-git clone https://github.com/Geek-Pwn/ORtester.git
+git clone https://github.com/Leonmugen/ORtester.git
 
 ## Dependencies
 ORtester use requests python module.
