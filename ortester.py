@@ -84,15 +84,15 @@ def main():
                     )
                     print(
                         Fore.YELLOW + "Redirected to:"
-                    ), Fore.WHITE, response.status_code, response.url, Style.RESET_ALL
+                    ), response.status_code, response.url
                     print(
                         Style.BRIGHT + Fore.BLUE + "Payload ---> " + Style.RESET_ALL
-                    ), Fore.RED + payloadF + Style.RESET_ALL + "\n"
+                    ), payloadF "\n"
                     exit()
                 else:
                     print(
                         Fore.YELLOW + "Redirected to:"
-                    ), response.status_code, response.url, Style.RESET_ALL + "\n"
+                    ), response.status_code, response.url"\n"
 
             else:
                 print("Request was not redirected\n")
