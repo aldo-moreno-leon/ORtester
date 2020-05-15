@@ -82,7 +82,9 @@ def main():
                         + "Open Redirect Vulnerability found!"
                         + Style.RESET_ALL
                     )
-                    print(Fore.YELLOW + "Redirected to: "), response.url
+                    print(
+                        Fore.YELLOW + "Redirected to: " + Style.RESET_ALL
+                    ), response.url
                     print(
                         Style.BRIGHT
                         + Fore.BLUE
