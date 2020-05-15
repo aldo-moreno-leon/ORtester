@@ -86,13 +86,17 @@ def main():
                         Fore.YELLOW + "Redirected to:"
                     ), response.status_code, response.url
                     print(
-                        Style.BRIGHT + Fore.BLUE + "Payload ---> " + Style.RESET_ALL
-                    ), payloadF "\n"
+                        Style.BRIGHT
+                        + Fore.BLUE
+                        + "Payload ---> "
+                        + payloadF
+                        + Style.RESET_ALL
+                    )
                     exit()
                 else:
                     print(
                         Fore.YELLOW + "Redirected to:"
-                    ), response.status_code, response.url"\n"
+                    ), response.status_code, response.url
 
             else:
                 print("Request was not redirected\n")
