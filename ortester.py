@@ -55,10 +55,10 @@ def main():
             newlist.write(l)
         else:
             newlist.write(line)
+    newlist.close()
 
     # Open file
     with open(options.file) as f:
-        print(options.file)
         for payload in f:
             payloadF = payload.strip()
             urlF = options.url + payloadF
