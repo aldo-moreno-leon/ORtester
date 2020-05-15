@@ -56,9 +56,6 @@ def main():
         else:
             newlist.write(line)
 
-    payloadlist.close()
-    newlist.close()
-
     # Open file
     with open(options.file) as f:
         print("Aldo")
