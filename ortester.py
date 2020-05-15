@@ -88,6 +88,7 @@ def main():
                         + response.status_code
                         + " "
                         + response.url
+                        + Style.RESET_ALL
                     )
                     print(
                         Style.BRIGHT
@@ -104,6 +105,7 @@ def main():
                         + response.status_code
                         + " "
                         + response.url
+                        + Style.RESET_ALL
                     )
 
             else:
