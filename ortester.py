@@ -69,7 +69,7 @@ def main():
 
             # ===Process to find an open redirect===.
             if response.history:
-
+                print(response.url)
                 # Compare the destination url with Bing's url.
                 if (
                     str(response.url)[0:19] == "http://www.bing.com"
