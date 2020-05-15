@@ -58,8 +58,8 @@ def main():
 
     # Open file
     with open(options.file) as f:
+        print(options.file)
         for payload in f:
-            print("Aldo")
             payloadF = payload.strip()
             urlF = options.url + payloadF
             print(urlF)
