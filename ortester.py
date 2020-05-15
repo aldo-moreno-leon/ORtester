@@ -42,10 +42,8 @@ def main():
     # Payloads file
     if options.file is True:
         s.addOption("file", True)
-    else:
-        
 
-    #Replace string in payloads file 
+    # Replace string in payloads file
     urlD = options.url
     info = tldextract.extract(url)
     domain_name = info.registered_domain
