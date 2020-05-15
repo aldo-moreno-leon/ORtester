@@ -69,22 +69,20 @@ def main():
 
             # ===Process to find an open redirect===.
             if response.history:
-                print(response.url)
+                print("leon" + response.url)
                 # Compare the destination url with Bing's url.
                 if (
                     str(response.url)[0:19] == "http://www.bing.com"
                     or str(response.url)[0:20] == "https://www.bing.com"
                 ):
-
+                    print(response.url)
                     print(
                         Style.BRIGHT
                         + Fore.YELLOW
                         + "Open Redirect Vulnerability found!"
                         + Style.RESET_ALL
                     )
-                    print(
-                        Fore.YELLOW + "Redirected to: " + Style.RESET_ALL
-                    ), response.url
+                    print(Fore.YELLOW + "Redirected to: " + response.url)
                     print(
                         Style.BRIGHT
                         + Fore.BLUE
