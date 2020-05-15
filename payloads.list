@@ -13,6 +13,14 @@ www.bing.com
 ////bing.com/%2f..
 ////example.com@bing.com/%2f..
 https://bing.com/%2f..
+%09http:///example.com%40bing.com
+////bing%E3%80%82com
+//bing.com?
+///www.example.com@bing.com/
+http:http://bing.com
+//.@.@bing.com
+°/https://bing.com
+https://bing.comğ.example.com
 https://example.com@bing.com/%2f..
 /https://bing.com/%2f..
 /https://example.com@bing.com/%2f..

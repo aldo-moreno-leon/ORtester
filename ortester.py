@@ -69,13 +69,11 @@ def main():
 
             # ===Process to find an open redirect===.
             if response.history:
-                print("leon" + response.url)
                 # Compare the destination url with Bing's url.
                 if (
                     str(response.url)[0:19] == "http://www.bing.com"
                     or str(response.url)[0:20] == "https://www.bing.com"
                 ):
-                    print(response.url)
                     print(
                         Style.BRIGHT
                         + Fore.YELLOW
@@ -92,14 +90,7 @@ def main():
                     )
                     exit()
                 else:
-                    print(
-                        Fore.YELLOW
-                        + "Redirected to:"
-                        + response.status_code
-                        + " "
-                        + response.url
-                        + Style.RESET_ALL
-                    )
+                    print(Fore.YELLOW + "Redirected to:" + response.url)
 
             else:
                 print("Request was not redirected\n")
