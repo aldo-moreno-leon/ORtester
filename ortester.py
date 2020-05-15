@@ -45,7 +45,7 @@ def main():
 
     # Replace string in payloads file
     urlD = options.url
-    info = tldextract.extract(url)
+    info = tldextract.extract(urlD)
     domain_name = info.registered_domain
     payloadlist = open("payloads.list", "r").readlines()
     newlist = open("all.list", "w")
