@@ -83,8 +83,12 @@ def main():
                         + Style.RESET_ALL
                     )
                     print(
-                        Fore.YELLOW + "Redirected to:"
-                    ), response.status_code, response.url
+                        Fore.YELLOW
+                        + "Redirected to: "
+                        + response.status_code
+                        + " "
+                        + response.url
+                    )
                     print(
                         Style.BRIGHT
                         + Fore.BLUE
@@ -95,8 +99,12 @@ def main():
                     exit()
                 else:
                     print(
-                        Fore.YELLOW + "Redirected to:"
-                    ), response.status_code, response.url
+                        Fore.YELLOW
+                        + "Redirected to:"
+                        + response.status_code
+                        + " "
+                        + response.url
+                    )
 
             else:
                 print("Request was not redirected\n")
