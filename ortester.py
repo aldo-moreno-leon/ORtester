@@ -84,10 +84,10 @@ def main():
                     )
                     print(
                         Fore.YELLOW + "Redirected to:"
-                    ), Fore.RED, response.status_code, response.url, Style.RESET_ALL
+                    ), Fore.WHITE, response.status_code, response.url, Style.RESET_ALL
                     print(
                         Style.BRIGHT + Fore.BLUE + "Payload ---> " + Style.RESET_ALL
-                    ), Fore.BLUE + payloadF + Style.RESET_ALL + "\n"
+                    ), Fore.RED + payloadF + Style.RESET_ALL + "\n"
                     exit()
                 else:
                     print(
