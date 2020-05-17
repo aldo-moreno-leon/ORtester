@@ -70,7 +70,7 @@ def main():
             try:
                 response = requests.get(urlF, verify=False)
             except requests.exceptions.ConnectionError:
-                response = "No server response"
+                print("No server response")
                 exit()
 
             # ===Process to find an open redirect===.
