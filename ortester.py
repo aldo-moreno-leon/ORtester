@@ -72,8 +72,12 @@ def main():
                 # Compare the destination url with Bing's url.
                 if (
                     str(response.url)[0:19] == "http://www.bing.com"
-                    or str(response.url)[0:20] == "https://www.bing.com"
+                    and response.status_code == 302
+                ) or (
+                    str(response.url)[0:20] == "https://www.bing.com"
+                    and response.status_code == 302
                 ):
+
                     print(
                         Style.BRIGHT
                         + Fore.YELLOW
@@ -90,7 +94,7 @@ def main():
                     )
                     exit()
                 else:
-                    print(Fore.YELLOW + "Redirected to:" + response.url)
+                    print(Fore.YELLOW + "Redirected to: " + response.url)
 
             else:
                 print("Request was not redirected\n")
