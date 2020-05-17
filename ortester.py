@@ -28,7 +28,7 @@ def banner():
 
 def main():
     os.system("clear")
-    warnings.filterwarnings("ignore", category=InsecureRequestWarning)
+    warnings.filterwarnings("ignore")
     banner()
     usage = "Usage: python %prog [-h] -u 'URL' -f [file]"
 
