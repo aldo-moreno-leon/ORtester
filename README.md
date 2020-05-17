@@ -24,11 +24,8 @@ sudo pip install -r requirements.txt
 ## Examples
 * To scan an URL:
 ```
-python ortester.py -u https://www.example.com/redirect.php?url= -f payloads.list
+python ortester.py -u https://www.example.com/redirect.php?url= -f all.list
 ```
 ```
-python ortester.py --url https://www.example.com/redirect.php?url= --file payloads.list
+python ortester.py --url https://www.example.com/redirect.php?url= --file all.list
 ```
-
-## Version
-Current version is 0.1
