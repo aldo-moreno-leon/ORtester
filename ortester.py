@@ -64,11 +64,8 @@ def main():
             urlF = options.url + payloadF
             print(urlF)
 
-            # Get the response(200,400,404).
-            try:
-                response = requests.get(urlF, verify=False)
-            except:
-                pass
+            # Get the response.
+            response = os.system(requests.get(urlF, verify=False) + "2>/dev/null")
 
             # ===Process to find an open redirect===.
             if response.history:
