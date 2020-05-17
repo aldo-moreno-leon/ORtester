@@ -65,7 +65,7 @@ def main():
             print(urlF)
 
             # Get the response(200,400,404).
-            response = requests.get(urlF, verify=False)
+            response = requests.get(urlF)
 
             # ===Process to find an open redirect===.
             if response.history:
