@@ -65,7 +65,7 @@ def main():
             print(urlF)
 
             # Get the response(200,400,404).
-            response = requests.head(urlF)
+            response = requests.get(urlF, verify=False)
 
             # ===Process to find an open redirect===.
             if response.history:
@@ -97,7 +97,7 @@ def main():
 
             else:
                 print(
-                    "Request was not redirected. Check manually because it might be a redirect using javascript. b\n"
+                    "Request was not redirected. Check manually because it might be a redirect using javascript. \n"
                 )
 
 
