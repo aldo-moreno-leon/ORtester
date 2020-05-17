@@ -68,14 +68,11 @@ def main():
             response = requests.get(urlF)
 
             # ===Process to find an open redirect===.
-            if response.history:
+            if response.history or response.history == []:
                 # Compare the destination url with Bing's url.
                 if (
                     str(response.url)[0:19] == "http://www.bing.com"
-                    and response.status_code == 302
-                ) or (
-                    str(response.url)[0:20] == "https://www.bing.com"
-                    and response.status_code == 302
+                    or str(response.url)[0:20] == "https://www.bing.com"
                 ):
 
                     print(
