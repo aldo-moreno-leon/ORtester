@@ -68,7 +68,7 @@ def main():
             response = requests.head(urlF)
 
             # ===Process to find an open redirect===.
-            if response.history:  # Mala practica aqui
+            if response.history:
                 # Compare the destination url with Bing's url.
                 if (
                     str(response.url)[0:19] == "http://www.bing.com"
@@ -96,7 +96,9 @@ def main():
                     )
 
             else:
-                print("Request was not redirected\n")
+                print(
+                    "Request was not redirected. Check manually because it might be a redirect using javascript. b\n"
+                )
 
 
 # Press ctrl+c to finish
