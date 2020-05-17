@@ -3,6 +3,7 @@ import os
 import requests
 import tldextract
 import signal
+import warnings
 from optparse import OptionParser
 from colorama import *
 
@@ -27,6 +28,7 @@ def banner():
 
 def main():
     os.system("clear")
+    warnings.filterwarnings("ignore", category=InsecureRequestWarning)
     banner()
     usage = "Usage: python %prog [-h] -u 'URL' -f [file]"
 
@@ -65,7 +67,7 @@ def main():
             print(urlF)
 
             # Get the response.
-            response = os.system(requests.get(urlF, verify=False) + "2>/dev/null")
+            response = requests.get(urlF, verify=False)
 
             # ===Process to find an open redirect===.
             if response.history:
