@@ -9,7 +9,7 @@ from colorama import *
 
 
 def banner():
-    print(
+    print (
         Style.BRIGHT
         + Fore.YELLOW
         + """
@@ -64,10 +64,14 @@ def main():
         for payload in f:
             payloadF = payload.strip()
             urlF = options.url + payloadF
-            print(urlF)
+            print (urlF)
 
             # Get the response.
-            response = requests.get(urlF, verify=False)
+            try:
+                response = requests.get(urlF, verify=False)
+            except ConnectionError as e:
+                print e
+                r = "No response"
 
             # ===Process to find an open redirect===.
             if response.history:
@@ -77,14 +81,14 @@ def main():
                     or str(response.url)[0:20] == "https://www.bing.com"
                 ):
 
-                    print(
+                    print (
                         Style.BRIGHT
                         + Fore.YELLOW
                         + "Open Redirect Vulnerability found!"
                         + Style.RESET_ALL
                     )
-                    print(Fore.YELLOW + "Redirected to: " + response.url)
-                    print(
+                    print (Fore.YELLOW + "Redirected to: " + response.url)
+                    print (
                         Style.BRIGHT
                         + Fore.BLUE
                         + "Payload ---> "
@@ -93,19 +97,19 @@ def main():
                     )
                     exit()
                 else:
-                    print(
+                    print (
                         Fore.YELLOW + "Redirected to: " + response.url + Style.RESET_ALL
                     )
 
             else:
-                print(
+                print (
                     "Request was not redirected. Check manually because it might be a redirect using javascript. \n"
                 )
 
 
 # Press ctrl+c to finish
 def ctrl_c(signum, rfm):
-    print("\nSee you soon!\n")
+    print ("\nSee you soon!\n")
     exit()
 
 
@@ -113,6 +117,6 @@ signal.signal(signal.SIGINT, ctrl_c)
 
 try:
     main()
-    print(Fore.YELLOW + "RESULT: " + Style.RESET_ALL + "No Open Redirect Found!")
+    print (Fore.YELLOW + "RESULT: " + Style.RESET_ALL + "No Open Redirect Found!")
 except (TypeError):
-    print("Usage: python ordetector.py -u 'URL' -f [file]\n")
+    print ("Usage: python ordetector.py -u 'URL' -f [file]\n")
