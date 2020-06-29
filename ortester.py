@@ -49,7 +49,7 @@ def main():
     urlD = options.url
     info = tldextract.extract(urlD)
     domain_name = info.registered_domain
-    payloadlist = open("payloads.list", "r").readlines()
+    payloadlist = open("payloads.list", encoding="utf8").readlines()
     newlist = open("all.list", "w")
     for line in payloadlist:
         if line.count("example") == 1 or line.count("example") == 2:
@@ -119,4 +119,4 @@ try:
     main()
     print(Fore.YELLOW + "RESULT: " + Style.RESET_ALL + "No Open Redirect Found!")
 except (TypeError):
-    print("Usage: python ordetector.py -u 'URL' -f [file]\n")
+    print("Usage: python ortester.py -u 'URL' -f [file]\n")
