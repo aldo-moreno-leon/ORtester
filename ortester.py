@@ -49,7 +49,7 @@ def main():
     urlD = options.url
     info = tldextract.extract(urlD)
     domain_name = info.registered_domain
-    payloadlist = open("payloads.list", encoding="utf8").readlines()
+    payloadlist = open("payloads.list", encoding="latin-1").readlines()
     newlist = open("all.list", "w")
     for line in payloadlist:
         if line.count("example") == 1 or line.count("example") == 2:
