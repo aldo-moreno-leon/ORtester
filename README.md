@@ -9,7 +9,7 @@ ORtester is a tool designed to detect open redirects vulnerabilities on websites
 git clone https://github.com/Leonmugen/ORtester.git
 
 ## Dependencies
-ORtester use requests python module.
+ORtester use requests and tldextract python modules.
 ```
 sudo pip install -r requirements.txt
 ```
