@@ -74,10 +74,10 @@ def main():
                 print("No server response")
                 exit()
 
-            #Getting location and href to js based redirection
-            soup = BeautifulSoup(response.text, 'html.parser')
-            location = 'window.location' in str(soup.find_all('script'))
-            href = 'window.location' in str(soup.find_all('script'))
+            # Getting location and href to js based redirection
+            soup = BeautifulSoup(response.text, "html.parser")
+            location = "window.location" in str(soup.find_all("script"))
+            href = "window.location" in str(soup.find_all("script"))
 
             # ===Process to find an open redirect===.
             if response.history:
@@ -112,7 +112,7 @@ def main():
                 or str(response.url)[0:20] == "https://www.bing.com"
             ):
                 if location or href:
-                      print(
+                    print(
                         Style.BRIGHT
                         + Fore.YELLOW
                         + "Open Redirect Vulnerability found!"
