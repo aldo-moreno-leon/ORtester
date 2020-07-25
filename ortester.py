@@ -75,7 +75,7 @@ def main():
                 exit()
 
             #Getting location and href to js based redirection
-            soup = BeautifulSoup(page.text, 'html.parser')
+            soup = BeautifulSoup(response.text, 'html.parser')
             location = 'window.location' in str(soup.find_all('script'))
             href = 'window.location' in str(soup.find_all('script'))
 
