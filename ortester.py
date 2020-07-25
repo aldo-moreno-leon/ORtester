@@ -4,7 +4,6 @@ import requests
 import tldextract
 import signal
 import warnings
-from bs4 import BeautifulSoup
 from optparse import OptionParser
 from colorama import *
 
@@ -69,15 +68,10 @@ def main():
 
             # Get the response.
             try:
-                response = requests.get(urlF, verify=False, timeout=40)
+                response = requests.get(urlF, verify=False)
             except requests.exceptions.ConnectionError:
                 print("No server response")
                 exit()
-
-            # Getting location and href to js based redirection
-            soup = BeautifulSoup(response.text, "html.parser")
-            location = "window.location" in str(soup.find_all("script"))
-            href = "window.location" in str(soup.find_all("script"))
 
             # ===Process to find an open redirect===.
             if response.history:
@@ -107,34 +101,10 @@ def main():
                         Fore.YELLOW + "Redirected to: " + response.url + Style.RESET_ALL
                     )
 
-            elif (
-                str(response.url)[0:19] == "http://www.bing.com"
-                or str(response.url)[0:20] == "https://www.bing.com"
-            ):
-                if location or href:
-                    print(
-                        Style.BRIGHT
-                        + Fore.YELLOW
-                        + "Open Redirect Vulnerability found!"
-                        + Style.RESET_ALL
-                    )
-                    print(Fore.YELLOW + "Redirected to: " + response.url)
-                    print(
-                        Style.BRIGHT
-                        + Fore.BLUE
-                        + "Payload ---> "
-                        + payloadF
-                        + Style.RESET_ALL
-                    )
-                    exit()
-                else:
-                    print(
-                        Fore.YELLOW + "Redirected to: " + response.url + Style.RESET_ALL
-                    )
-            # else:
-            #   print(
-            #      "Request was not redirected. Check manually because it might be a redirect using javascript. \n"
-            # )
+            else:
+                print(
+                    "Request was not redirected. Check manually because it might be a redirect using javascript. \n"
+                )
 
 
 # Press ctrl+c to finish
